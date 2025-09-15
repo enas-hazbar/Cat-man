@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+   <title>Pac-man</title>
+   <script> </script>
+   <link rel="stylesheet" href="style.css">
+   <img src="images/logo.png" class="logo" alt="logo" />
+   
+</head>
+<body class="body">
+<div class="row">
+  <div class="column">
+    <div class="image-wrapper">
+      <img src="images/Screenshot_2025-09-10_092948-removebg-preview.png" alt="escape" style="width:100%">
+      <img src="images/levelone.png" class="overlay">
+      <img src="images/easy-level.png" class="overlay1" />
+      <button class="multi-color-btn">Easy Level</button>
+    </div>
+  </div>
+  <div class="column">
+    <div class="image-wrapper">
+    <img src="images/Screenshot_2025-09-10_092948-removebg-preview.png" alt="escape" style="width:100%">
+    <img src="images/leveltwo.png" class="overlay">
+    <img src="images/med-level.png" class="overlay2" />
+    <button class="multi-color-btn1">Med Level</button>
+    </div>
+  </div>
+  <div class="column">
+    <div class="image-wrapper">
+    <img src="images/Screenshot_2025-09-10_092948-removebg-preview.png" alt="escape" style="width:100%">
+    <img src="images/levelthree.png" class="overlay">
+    <img src="images/hard-level.png" class="overlay1" />
+    <button class="multi-color-btn1">Hard Level</button>
+<script src="app.js"></script>
+    </div>
+  </div>
+</div>
+<!-- Cute button under the three images -->
+<div class="button-container">
+  <button class="cute-btn">
+    <img src="images/cat.png" alt="cat" class="cat">
+    <img src="images/catsteps.png" alt="steps" class="steps">
+    <span>Instructions</span>
+  </button>
+</div>
+<!-- Popup (hidden by default) -->
+<div id="popup" class="popup">
+  <div class="popup-content">
+    <span class="close">&times;</span>
+    <h2>How to play 🐾</h2>
+    <ul>
+      <br />
+     <li><p>Use the arrow keys (⬆️⬇️⬅️➡️) to move cat-man around the maze.</p></li> <br />
+     <li>Avoid dogs and eat the fishs and salamons to can eat the dogs when they freezd.</li> <br/>
+     <li class="text2">Escap the maze to win the level. </li>
+    </ul>
+  </div>
+</div>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const button = document.querySelector(".cute-btn");
+  const popup = document.getElementById("popup");
+  const closeBtn = document.querySelector(".close");
+
+  button.addEventListener("click", () => {
+    popup.style.display = "block";
+  });
+
+  closeBtn.addEventListener("click", () => {
+    popup.style.display = "none";
+  });
+
+  window.addEventListener("click", (e) => {
+    if (e.target === popup) {
+      popup.style.display = "none";
+    }
+  });
+});
+</script>
+</body>
+</html> 

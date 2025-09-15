@@ -1,0 +1,302 @@
+/* .grid {
+    display: flex;
+    flex-wrap: wrap;
+    width: 560px;
+    height: 560px;
+    margin-left: 400px;
+    margin-top: 100px;
+    /* border: solid #ffffff; */
+    /* background-color:#fff1f1;/ */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(28, 20px); /* 28 cells per row */
+    grid-template-rows: repeat(31, 20px);    /* 31 rows total */
+    gap: 0; /* remove space between cells */
+    padding: 0;
+    margin: 0;
+    margin-left: 400px;
+    margin-top: 50px;
+}
+  
+.grid div {
+    width: 20px;
+    height: 20px;
+}
+
+.pac-dot {
+    /* background-color: #ffd277bd;   
+    border: 5px solid white;
+    box-sizing: border-box; */
+    background-image:url(images/Screenshot_2025-09-05_112103-removebg-preview.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    transform: rotate(0deg);
+    transition: 0.1s linear;
+    background-size: 20px;
+}
+
+.wall {
+    background-color:#ffd9d9;
+}
+
+.power-pellet {
+    /* background-color: #ffb8ae;   
+    border-radius: 10px; */
+    background-image:url(images/Screenshot_2025-09-05_113000-removebg-preview.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    transform: rotate(0deg);
+    transition: 0.1s linear;
+    background-size: 20px;
+}
+
+.blinky {
+    /* background-color: #ff0000; */
+    background-image:url(images/Screenshot_2025-09-05_110720-removebg-preview.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    transform: rotate(0deg);
+    transition: 0.1s linear;
+}
+
+.pinky {
+    /* background-color: #ffb8ff; */
+    background-image:url(images/Screenshot_2025-09-05_110037-removebg-preview.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    transform: rotate(0deg);
+    transition: 0.1s linear;
+}
+
+.inky {
+    /* background-color: #00ffff; */
+    background-image:url(images/Screenshot_2025-09-05_105958-removebg-preview.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    transform: rotate(0deg);
+    transition: 0.1s linear;
+}
+
+.clyde {
+    /* background-color: #ffb851;      */
+    background-image:url(images/Screenshot_2025-09-05_110026-removebg-preview.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    transform: rotate(0deg);
+    transition: 0.1s linear;
+}
+
+.pac-man {
+    /* background-color: yellow;
+    border-radius: 10px; */
+    background-image:url(images/Screenshot_2025-09-05_104137-removebg-preview.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    transform: rotate(0deg);
+    transition: 0.1s linear;
+}
+
+.scared-ghost {
+    background-image:url(images/Screenshot_2025-09-05_111716-removebg-preview.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    transform: rotate(0deg);
+    transition: 0.1s linear;
+}
+.escape-door {
+    /* background-color: #00ff7f; 
+    border-radius: 4px;
+    border: 2px solid #006400; */
+    background-image: url(images/Screenshot_2025-09-10_092948-removebg-preview.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    transform: rotate(0deg);
+    transition: 0.1s linear;
+}
+
+/* .lives{
+      vertical-align: baseline;
+} */
+
+/* homepage style */
+.body{
+    background-color: #FFEBEB;
+}
+.logo{
+ display: block;
+  margin: auto;
+ width: 260px;
+
+}
+.column {
+  float: left;
+  width: 33.33%;
+  position: relative; /* needed */
+  top: -24px;
+}
+
+/* Clearfix */
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+/* Position wrapper */
+.image-wrapper {
+  position: relative; /* makes overlay positioning work */
+  display: inline-block;
+}
+
+/* Overlay image */
+.overlay {
+  position: absolute;
+   top: 170px;  /* adjust vertical position */
+  left: 93px;  /* adjust horizontal position */
+  width: 230px; /* size of overlay image */
+}
+.overlay1 {
+position: absolute;
+top: 80px;  /* adjust vertical position */
+left: 150px;  /* adjust horizontal position */
+width: 110px; /* size of overlay image */
+}
+.overlay2 {
+position: absolute;
+top: 80px;  /* adjust vertical position */
+left: 150px;  /* adjust horizontal position */
+width: 100px; /* size of overlay image */
+}
+/* Button overlay */
+.multi-color-btn {
+  position: absolute;
+  bottom: 80px;   /* move button up/down */
+  left: 45%;
+  transform: translateX(-50%);
+  padding: 10px 20px;
+  font-size: 16px;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  
+  /* 3-color gradient background */
+  background: linear-gradient(75deg, #ffa270, #ff7e6e, #ffebeb);
+  
+  /* Optional: nice shadow */
+  box-shadow: 0px 4px 8px rgba(0,0,0,0.3);
+}
+.multi-color-btn1 {
+  position: absolute;
+  bottom: 90px;   /* move button up/down */
+  left: 45%;
+  transform: translateX(-50%);
+  padding: 10px 20px;
+  font-size: 16px;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  
+  /* 3-color gradient background */
+  background: linear-gradient(75deg, #ffa270, #ff7e6e, #ffebeb);
+  
+  /* Optional: nice shadow */
+  box-shadow: 0px 4px 8px rgba(0,0,0,0.3);
+}
+/* Center the button below the row */
+.button-container {
+  text-align: center;
+  margin-top: 20px;
+}
+
+/* Button style */
+.cute-btn {
+  position: relative;
+  background: linear-gradient(180deg, #555, #343434); /* light on top, dark bottom */
+  color: white;
+  font-size: 28px;
+  font-family: "Courier New", monospace;
+  border: none;
+  border-radius: 50px;       /* pill shape */
+  padding: 20px 50px;
+  cursor: pointer;
+  
+  /* Shadows for depth */
+  box-shadow: inset 0px 2px 6px rgba(255,255,255,0.4), /* top inner highlight */
+              inset 0px -3px 6px rgba(0,0,0,0.6),       /* bottom inner shadow */
+              0px 5px 12px rgba(0,0,0,0.5);             /* outer drop shadow */
+}
+
+
+/* Text styling */
+.cute-btn span {
+  position: relative;
+  z-index: 2;
+}
+
+/* Cat image on top */
+.cute-btn .cat {
+  position: absolute;
+  top: -69px;    /* adjust to place cat above button */
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 3;
+  width: 170px;
+}
+.cute-btn .steps {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  z-index: 1;
+    opacity: 0.70;   /* lighter paw prints */
+}
+
+/* Popup background */
+.popup {
+  display: none; /* Hidden by default */
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.6); /* semi-transparent black */
+}
+
+/* Popup box */
+.popup-content {
+  background: #fff;
+  margin: 10% auto;
+  padding: 20px;
+  border-radius: 15px;
+  width: 60%;
+  max-width: 500px;
+  text-align: center;
+  position: relative;
+  box-shadow: 0px 5px 15px rgba(0,0,0,0.3);
+}
+
+/* Close button */
+.close {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+.text2 {
+  text-align: left;
+}
