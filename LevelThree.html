@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+   <title>Pac-man</title>
+   <link rel="stylesheet" href="style.css">
+   <script src="LevelThree.js"></script>
+</head>
+<body class="body">
+  <div class="scoreboard">
+    <h3>Score: <span id="score"></span></h3> 
+    <div id="lives"></div>
+  </div>
+
+  <div class="grid"></div>
+    <div id="popup1" class="popup">
+  <div class="popup-content">
+    <span class="close">&times;</span>
+    <img src="images/Win.png" class="Win">
+    <p class="Wintext">🎉 You've completed the hardest level! You're amazing!✨</p>
+    <button class="next-btn1">
+      <a href="homepage.html" class="FontColor">Return to Homepage</a>
+      <span class="arrow">➔</span>
+    </button>
+  </div>
+</div>
+<!-- Game Over Popup -->
+<div id="gameOverPopup" class="popup">
+  <div class="popup-content">
+    <span class="close-gameover">&times;</span>
+    <p class="game-over-text">Game Over! </p>
+    <button class="restart-btn">Restart Level</button>
+    <button class="home-btn"> <a href="homepage.html" class="FontColor1">Return to Homepage</a> </button>
+  </div>
+</div>
+</body>
+</html> 

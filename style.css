@@ -27,7 +27,7 @@
     /* background-color: #ffd277bd;   
     border: 5px solid white;
     box-sizing: border-box; */
-    background-image:url(images/Screenshot_2025-09-05_112103-removebg-preview.png);
+    background-image:url(images/Fish.png);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -43,7 +43,7 @@
 .power-pellet {
     /* background-color: #ffb8ae;   
     border-radius: 10px; */
-    background-image:url(images/Screenshot_2025-09-05_113000-removebg-preview.png);
+    background-image:url(images/SalmonFish.png);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -54,7 +54,7 @@
 
 .blinky {
     /* background-color: #ff0000; */
-    background-image:url(images/Screenshot_2025-09-05_110720-removebg-preview.png);
+    background-image:url(images/DogChase.png);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -64,7 +64,7 @@
 
 .pinky {
     /* background-color: #ffb8ff; */
-    background-image:url(images/Screenshot_2025-09-05_110037-removebg-preview.png);
+    background-image:url(images/DogGirl.png);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -74,7 +74,7 @@
 
 .inky {
     /* background-color: #00ffff; */
-    background-image:url(images/Screenshot_2025-09-05_105958-removebg-preview.png);
+    background-image:url(images/DogOne.png);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -84,7 +84,7 @@
 
 .clyde {
     /* background-color: #ffb851;      */
-    background-image:url(images/Screenshot_2025-09-05_110026-removebg-preview.png);
+    background-image:url(images/DogTwo.png.png);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -95,7 +95,7 @@
 .pac-man {
     /* background-color: yellow;
     border-radius: 10px; */
-    background-image:url(images/Screenshot_2025-09-05_104137-removebg-preview.png);
+    background-image:url(images/Cat.png);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -104,7 +104,7 @@
 }
 
 .scared-ghost {
-    background-image:url(images/Screenshot_2025-09-05_111716-removebg-preview.png);
+    background-image:url(images/FrozenDogs.png);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -115,7 +115,7 @@
     /* background-color: #00ff7f; 
     border-radius: 4px;
     border: 2px solid #006400; */
-    background-image: url(images/Screenshot_2025-09-10_092948-removebg-preview.png);
+    background-image: url(images/EscapeDoor.png);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -123,9 +123,6 @@
     transition: 0.1s linear;
 }
 
-/* .lives{
-      vertical-align: baseline;
-} */
 
 /* homepage style */
 .body{
@@ -173,7 +170,7 @@ width: 110px; /* size of overlay image */
 .overlay2 {
 position: absolute;
 top: 80px;  /* adjust vertical position */
-left: 150px;  /* adjust horizontal position */
+left: 155px;  /* adjust horizontal position */
 width: 100px; /* size of overlay image */
 }
 /* Button overlay */
@@ -297,6 +294,308 @@ width: 100px; /* size of overlay image */
   font-weight: bold;
   cursor: pointer;
 }
+
+/* Pages inside popup */
+.popup-page {
+  display: none;
+}
+
+.popup-page.active {
+  display: block;
+}
+
+/* Dots container */
+.dots {
+  margin-top: 20px;
+  text-align: center;
+}
+
+/* Individual dots */
+.dot {
+  height: 12px;
+  width: 12px;
+  margin: 0 5px;
+  background-color: #ffffff;
+  border-radius: 50%;
+  display: inline-block;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  border: solid 2px;
+  border-color: #ffd0d0;
+}
+
+.dot.active {
+  background-color: #f8d0d0;
+}
+
+/* Text alignment example */
 .text2 {
   text-align: left;
 }
+/* .Controller {
+  width: 200px;
+} */
+ .CatPopup {
+  width: 35px;
+  position: absolute;
+  top: 47px;  /* adjust vertical position */
+  
+ }
+  .DogPopup {
+  width: 35px;
+  position: absolute;
+  top: 43px;  /* adjust vertical position */
+  left: 310px;
+ }
+ .CatPopup2{
+  width: 25px;
+  position: absolute;
+  top: 123px;  /* adjust vertical position */
+  left: 40px
+ }
+ .DogPopup2 {
+    width: 25px;
+  position: absolute;
+  top: 160px;  /* adjust vertical position */
+  left: 35px
+ }
+ .FishPopup {
+    width: 20px;
+  position: absolute;
+  top: 197px;  /* adjust vertical position */
+  left: 42px
+ }
+ .SalmonPopup {
+    width: 20px;
+  position: absolute;
+  top: 230px;  /* adjust vertical position */
+  left: 45px
+ }
+ .HeadingTwo {
+  margin-right: 90px;
+ }
+ .FontColor{
+  color: white;
+    text-align: center;
+  text-decoration: none;
+  display: inline-block;
+ }
+/* Scoreboard container */
+.scoreboard {
+  display: flex;
+  justify-content: space-between; /* puts score left, lives right */
+  align-items: center;
+  margin: 20px 50px; /* space from top/edges */
+  font-size: 18px;
+}
+
+.scoreboard h3 {
+  margin-left: 355px;  /* adjust value as you like */
+}
+
+/* Push lives a little inward from the right */
+.scoreboard #lives {
+  margin-right: 520px; /* adjust value as you like */
+  font-weight: bold;
+}
+/* .body1{
+  background-color: #fff7f7;
+} */
+ .EscapeDoor{
+      width: 20px;
+  position: absolute;
+  top: 265px;  /* adjust vertical position */
+  left: 45px
+ }
+ .Winning{
+  color: #0065cb;
+ }
+ .Losing {
+  color:#cd0101
+ }
+ .Easy {
+color: green;
+ }
+ .Med {
+  color: orange;
+ }
+ .LevelEM {
+  background: -webkit-linear-gradient(green, orange);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+ }
+ .Hard {
+  color:#ff9000;
+ }
+    /* Popup overlay */
+    .popup {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.5);
+      display: none; /* hidden by default */
+      justify-content: center;
+      align-items: center;
+    }
+
+    /* Popup box */
+    .popup-content {
+      background: #f6e1f3;
+      padding: 20px;
+      border-radius: 8px;
+      text-align: center;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    }
+    .Win{
+  width: 500px;
+    }
+    .Wintext {
+      color:#b5a7f4;
+      font-size: 26px;
+    }
+.next-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 140px;
+  gap: 15px; /* space between text and arrow */
+  
+  background: #ff9ad1;   /* pink background */
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  border: none;
+  border-radius: 25px;   /* rounded pill shape */
+  padding: 12px 28px;
+  cursor: pointer;
+  
+  /* subtle shadow for the "double layer" effect */
+  box-shadow: 0 6px 0 #d9b6ff;
+  
+  transition: all 0.2s ease;
+  
+}
+.next-btn1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 120px;
+  gap: 15px; /* space between text and arrow */
+  
+  background: #ff9ad1;   /* pink background */
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  border: none;
+  border-radius: 25px;   /* rounded pill shape */
+  padding: 12px 28px;
+  cursor: pointer;
+  
+  /* subtle shadow for the "double layer" effect */
+  box-shadow: 0 6px 0 #d9b6ff;
+  
+  transition: all 0.2s ease;
+  
+}
+
+.next-btn .arrow {
+ display: inline-flex;        
+  align-items: center;
+  justify-content: center;
+  color: #ff9ad1;               
+  font-size: 20px;             
+  background-color: white;       
+  width: 35px;                   
+  height: 35px;                  
+  border-radius: 50%; 
+}
+
+.next-btn:hover {
+  background: #ff7fc6;   /* darker pink on hover */
+  box-shadow: 0 4px 0 #c8a5ff;
+  transform: translateY(-2px);
+}
+
+.next-btn:active {
+  transform: translateY(2px);
+  box-shadow: 0 2px 0 #c8a5ff;
+}
+
+/* Game Over Popup Style */
+#gameOverPopup {
+     position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.5);
+      display: none; /* hidden by default */
+      justify-content: center;
+      align-items: center;
+}
+
+#gameOverPopup .popup-content {
+      background: #ffffff;
+      padding: 20px;
+      border-radius: 15px;
+      text-align: center;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+
+
+#gameOverPopup .popup-content p {
+  font-size: 60px;
+  margin-bottom: 40px;
+  font-weight: bold;
+    background: -webkit-linear-gradient(yellow, orange, green);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+#gameOverPopup .popup-content button {
+ padding: 10px 20px;
+  margin: 5px;
+  border: solid 3px;
+    border-color: #d9b6ff;
+  background: #ffffff;   /* pink background */
+  color: rgb(255, 0, 0);
+  font-weight: bold;
+  font-size: 18px;
+  border-radius: 8px;   /* rounded pill shape */
+  padding: 12px 28px;
+  cursor: pointer;
+  
+  /* subtle shadow for the "double layer" effect */
+  box-shadow: 0 2px 0 #d9b6ff;
+  transition: all 0.2s ease;
+
+}
+
+#gameOverPopup .popup-content button:hover {
+  background-color: #d9b6ff;
+}
+
+#gameOverPopup .close-gameover {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 22px;
+  font-weight: bold;
+  cursor: pointer;
+  color: #fff;
+}
+
+/* Fade animation */
+@keyframes popupFade {
+  from { transform: scale(0.5); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+ .FontColor1{
+  color: rgb(255, 0, 0);
+    text-align: center;
+  text-decoration: none;
+  display: inline-block;
+ }

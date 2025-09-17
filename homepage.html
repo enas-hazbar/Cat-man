@@ -12,26 +12,26 @@
 <div class="row">
   <div class="column">
     <div class="image-wrapper">
-      <img src="images/Screenshot_2025-09-10_092948-removebg-preview.png" alt="escape" style="width:100%">
+      <img src="images/EscapeDoor.png" alt="escape" style="width:100%">
       <img src="images/levelone.png" class="overlay">
       <img src="images/easy-level.png" class="overlay1" />
-      <button class="multi-color-btn">Easy Level</button>
+      <button class="multi-color-btn"> <a href="LevelOne.html" class="FontColor"> Easy Level</a> </button>
     </div>
   </div>
   <div class="column">
     <div class="image-wrapper">
-    <img src="images/Screenshot_2025-09-10_092948-removebg-preview.png" alt="escape" style="width:100%">
+    <img src="images/EscapeDoor.png" alt="escape" style="width:100%">
     <img src="images/leveltwo.png" class="overlay">
     <img src="images/med-level.png" class="overlay2" />
-    <button class="multi-color-btn1">Med Level</button>
+    <button class="multi-color-btn1">  <a href="LevelTwo.html" class="FontColor">Med Level</a></button>
     </div>
   </div>
   <div class="column">
     <div class="image-wrapper">
-    <img src="images/Screenshot_2025-09-10_092948-removebg-preview.png" alt="escape" style="width:100%">
+    <img src="images/EscapeDoor.png" alt="escape" style="width:100%">
     <img src="images/levelthree.png" class="overlay">
     <img src="images/hard-level.png" class="overlay1" />
-    <button class="multi-color-btn1">Hard Level</button>
+    <button class="multi-color-btn1"> <a href="LevelThree.html" class="FontColor">Hard Level</a></button>
 <script src="app.js"></script>
     </div>
   </div>
@@ -39,7 +39,7 @@
 <!-- Cute button under the three images -->
 <div class="button-container">
   <button class="cute-btn">
-    <img src="images/cat.png" alt="cat" class="cat">
+    <img src="images/ButtonCat.png" alt="cat" class="cat">
     <img src="images/catsteps.png" alt="steps" class="steps">
     <span>Instructions</span>
   </button>
@@ -48,35 +48,118 @@
 <div id="popup" class="popup">
   <div class="popup-content">
     <span class="close">&times;</span>
-    <h2>How to play 🐾</h2>
-    <ul>
+
+    <!-- How To Play -->
+    <div class="popup-page active">
+      <h2>How to play 🐾 </h2>
+      <!-- <img src="images/Controller.png" alt="Controller" class="Controller"> -->
       <br />
-     <li><p>Use the arrow keys (⬆️⬇️⬅️➡️) to move cat-man around the maze.</p></li> <br />
-     <li>Avoid dogs and eat the fishs and salamons to can eat the dogs when they freezd.</li> <br/>
-     <li class="text2">Escap the maze to win the level. </li>
-    </ul>
+      <ul>
+        <li><p>Use the arrow keys (⬆️⬇️⬅️➡️) to move Cat-Man around the maze.</p></li>
+        <br />
+        <li>Avoid dogs and eat fish & salmon. When dogs are frozen, you can eat them.</li>
+        <br />
+        <li class="text2">Escape the maze to win the level, with the escape door.</li>
+      </ul>
+      <br />
+      <!-- <button class="next-btn">Next ➡️</button> -->
+    </div>
+
+    <!-- Characters -->
+    <div class="popup-page">
+      <h2 class="HeadingTwo">Characters <img src="images/Cat.png" class="CatPopup"> <img src="images/DogChase.png" class="DogPopup"></h2>  <br />
+      <!-- 🐱🐶 🐟  -->
+      <ul>
+        <li class="text2"> <img src="images/Cat.png" class="CatPopup2"><strong>**Cat-Man**</strong>  → Your player.</li> <br />
+        <li class="text2"> <img src="images/DogChase.png" class="DogPopup2"> <strong>**Dogs**</strong> → Avoid them unless frozen dogs.</li>
+        <br />
+        <li class="text2"> <img src="images/Fish.png" class="FishPopup"> <strong>**Fish**</strong> → Eat and collect  points.</li>
+        <br />
+        <li class="text2"> <img src="images/SalmonFish.png" class="SalmonPopup"> <strong>**Salmon** </strong>→ Eat the dogs and collect points</li> <br />
+        <li class="text2"> <img src="images/EscapeDoor.png" class="EscapeDoor"> <strong>**Escape Door** </strong>→ Escape the maze</li> <br />
+
+
+      </ul>
+      <!-- <button class="prev-btn">⬅️ Back</button>
+      <button class="next-btn">Next ➡️</button> -->
+    </div>
+    <!-- Lose and win -->
+        <div class="popup-page">
+      <h2><strong class="Winning">Winning</strong> <strong>and</strong> <strong class="Losing">Losing</strong></h2>
+      <ul>
+        <li class="text2"> <strong class="Winning">Winning:</strong> </li> <br />
+        <li class="text2"> <strong class="Easy">Easy</strong> & <strong class="Med">Medium</strong> <strong class="LevelEM">levels:</strong> To win on these levels, you need to escape through the maze door </li> <br />
+        <li class="text2"><strong class="Hard">Hard Level:</strong> There are two ways to win: either <strong> escape the maze </strong> or <strong>earn 274 points</strong></li> <br />
+        <li class="text2"><strong class="Losing">Losing:</strong> You have three lives. If you are caught by the dogs three times, you lose the game</li> <br />
+      </ul>
+      <!-- <button class="prev-btn">⬅️ Back</button>
+      <button class="close-btn">Finish ✖️</button> -->
+    </div>
+    <!-- Scoring -->
+    <div class="popup-page">
+      <h2>Scoring ⭐</h2>
+      <ul>
+        <li class="text2">Eat a <strong>Fish </strong> = <strong>1</strong> point</li> <br />
+        <li class="text2">Eat a <strong>Salmon</strong>  = <strong>10</strong> points</li> <br />
+        <li class="text2">Eat a <strong>Frozen Dog</strong> = <strong>100</strong> points</li> <br />
+      </ul>
+      <!-- <button class="prev-btn">⬅️ Back</button>
+      <button class="close-btn">Finish ✖️</button> -->
+    </div>
+     <!-- Dots navigation -->
+    <div class="dots">
+      <span class="dot active"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+    </div>
   </div>
 </div>
+
 <script>
 document.addEventListener("DOMContentLoaded", () => {
   const button = document.querySelector(".cute-btn");
   const popup = document.getElementById("popup");
   const closeBtn = document.querySelector(".close");
+  const pages = document.querySelectorAll(".popup-page");
+  const dots = document.querySelectorAll(".dot");
 
+  let currentPage = 0;
+
+  function showPage(index) {
+    pages.forEach((page, i) => {
+      page.classList.toggle("active", i === index);
+      dots[i].classList.toggle("active", i === index);
+    });
+    currentPage = index;
+  }
+
+  // Open popup at first page
   button.addEventListener("click", () => {
     popup.style.display = "block";
+    showPage(0);
   });
 
+  // Close popup
   closeBtn.addEventListener("click", () => {
     popup.style.display = "none";
   });
 
+  // Close if clicking outside
   window.addEventListener("click", (e) => {
     if (e.target === popup) {
       popup.style.display = "none";
     }
   });
+
+  // Dot navigation
+  dots.forEach((dot, i) => {
+    dot.addEventListener("click", () => {
+      showPage(i);
+    });
+  });
 });
+
 </script>
 </body>
 </html> 
