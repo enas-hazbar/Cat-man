@@ -19,6 +19,7 @@ document.addEventListener("DOMContentLoaded", () => {
     let score = 0;
     let lives = 3;
 
+
     const layout = [
                1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
                1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1,
@@ -50,19 +51,16 @@ document.addEventListener("DOMContentLoaded", () => {
                1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
                1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ,1,
     ];
-
-
-
-     // 0 - pac-dots
+      // 0 - pac-dots
     // 1 - wall
-    // 2 - ghost-lair
+    // 2 - Dog-lair
     // 3 - power-pellet
     // 4 - empty
     // 5- escape door
 
-    const squares = [];
+const squares = [];
 
-    class Ghost {
+    class Dog {
         constructor(className, startIndex, speed) {
             this.className = className;
             this.startIndex = startIndex;
@@ -73,14 +71,15 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
-    const ghosts = [
-        new Ghost("blinky", 348, 250),
-        new Ghost("pinky", 376, 400),
-        new Ghost("inky", 351, 300),
-        new Ghost("clyde", 379, 500),
+    const dogs = [
+        new Dog("chase", 348, 250), // Blinky style
+        new Dog("skye", 376, 400),  // Pinky style
+        new Dog("zuma", 351, 300),  // Inky style
+        new Dog("rocky", 379, 500), // Clyde style
     ];
 
     let pacmanCurrentIndex;
+    let pacmanDirection = 1; // store current direction
 
     // ----------------- Functions -----------------
     function updateLives() {
@@ -99,58 +98,59 @@ document.addEventListener("DOMContentLoaded", () => {
 
             if (layout[i] === 0) square.classList.add("pac-dot");
             if (layout[i] === 1) square.classList.add("wall");
-            if (layout[i] === 2) square.classList.add("ghost-lair");
+            if (layout[i] === 2) square.classList.add("dog-lair");
             if (layout[i] === 3) square.classList.add("power-pellet");
             if (layout[i] === 5) square.classList.add("escape-door");
         }
     }
 
-    function movePacman(e) {
-        squares[pacmanCurrentIndex].classList.remove("pac-man");
-
-        switch (e.key) {
-            case "ArrowLeft":
-                if (pacmanCurrentIndex % width !== 0 &&
-                    !squares[pacmanCurrentIndex - 1].classList.contains("wall") &&
-                    !squares[pacmanCurrentIndex - 1].classList.contains("ghost-lair")) {
-                    pacmanCurrentIndex -= 1;
-                }
-                if (pacmanCurrentIndex - 1 === 363) pacmanCurrentIndex = 391;
-                break;
-
-            case "ArrowUp":
-                if (pacmanCurrentIndex - width >= 0 &&
-                    !squares[pacmanCurrentIndex - width].classList.contains("wall") &&
-                    !squares[pacmanCurrentIndex - width].classList.contains("ghost-lair")) {
-                    pacmanCurrentIndex -= width;
-                }
-                break;
-
-            case "ArrowRight":
-                if (pacmanCurrentIndex % width < width - 1 &&
-                    !squares[pacmanCurrentIndex + 1].classList.contains("wall") &&
-                    !squares[pacmanCurrentIndex + 1].classList.contains("ghost-lair")) {
-                    pacmanCurrentIndex += 1;
-                }
-                if (pacmanCurrentIndex + 1 === 392) pacmanCurrentIndex = 364;
-                break;
-
-            case "ArrowDown":
-                if (pacmanCurrentIndex + width < width * width &&
-                    !squares[pacmanCurrentIndex + width].classList.contains("wall") &&
-                    !squares[pacmanCurrentIndex + width].classList.contains("ghost-lair")) {
-                    pacmanCurrentIndex += width;
-                }
-                break;
-        }
-
-        squares[pacmanCurrentIndex].classList.add("pac-man");
-        pacDotEaten();
-        powerPelletEaten();
-        checkForGameOver();
-        checkForEscape();
-        checkForWin();
+function updatePacmanDirection(e) {
+    switch (e.key) {
+        case "ArrowLeft":
+            pacmanDirection = -1;
+            break;
+        case "ArrowUp":
+            pacmanDirection = -width;
+            break;
+        case "ArrowRight":
+            pacmanDirection = 1;
+            break;
+        case "ArrowDown":
+            pacmanDirection = width;
+            break;
     }
+}
+function movePacmanContinuously() {
+    squares[pacmanCurrentIndex].classList.remove("pac-man");
+
+    let nextIndex = pacmanCurrentIndex + pacmanDirection;
+
+    // prevent moving into walls or dog lair
+    if (
+        (pacmanDirection === -1 && (pacmanCurrentIndex % width === 0 || squares[nextIndex].classList.contains("wall") || squares[nextIndex].classList.contains("dog-lair"))) ||
+        (pacmanDirection === 1 && (pacmanCurrentIndex % width === width - 1 || squares[nextIndex].classList.contains("wall") || squares[nextIndex].classList.contains("dog-lair"))) ||
+        (pacmanDirection === -width && (pacmanCurrentIndex - width < 0 || squares[nextIndex].classList.contains("wall") || squares[nextIndex].classList.contains("dog-lair"))) ||
+        (pacmanDirection === width && (pacmanCurrentIndex + width >= width * width || squares[nextIndex].classList.contains("wall") || squares[nextIndex].classList.contains("dog-lair")))
+    ) {
+        squares[pacmanCurrentIndex].classList.add("pac-man");
+        return;
+    }
+
+    // move Pac-Man
+    pacmanCurrentIndex = nextIndex;
+
+    // handle tunnel wrap
+    if (pacmanCurrentIndex - 1 === 363) pacmanCurrentIndex = 391;
+    if (pacmanCurrentIndex + 1 === 392) pacmanCurrentIndex = 364;
+
+    squares[pacmanCurrentIndex].classList.add("pac-man");
+
+    pacDotEaten();
+    powerPelletEaten();
+    checkForGameOver();
+    checkForEscape();
+}
+
 
     function pacDotEaten() {
         if (squares[pacmanCurrentIndex].classList.contains("pac-dot")) {
@@ -166,47 +166,105 @@ document.addEventListener("DOMContentLoaded", () => {
             score += 10;
             eatPower.play();
             scoreDisplay.innerHTML = score;
-            ghosts.forEach(ghost => ghost.isScared = true);
-            setTimeout(unScareGhosts, 10000);
+            dogs.forEach(dog => (dog.isScared = true));
+            setTimeout(unScareDogs, 10000);
             squares[pacmanCurrentIndex].classList.remove("power-pellet");
         }
     }
 
-    function unScareGhosts() {
-        ghosts.forEach(ghost => ghost.isScared = false);
+function unScareDogs() {
+    dogs.forEach(dog => {
+        dog.isScared = false;
+        if (dog.isReturning) {
+            dog.isReturning = false; // 👀 allowed to leave lair again
+            squares[dog.currentIndex].classList.remove("scared-dog", "returning");
+        }
+    });
+}
+
+
+    function getTarget(dog) {
+        if (dog.className === "chase") {
+            return pacmanCurrentIndex; // Blinky
+        }
+        if (dog.className === "skye") {
+            return pacmanCurrentIndex + pacmanDirection * 4; // Pinky
+        }
+        if (dog.className === "zuma") {
+            let blinky = dogs.find(d => d.className === "chase");
+            let ahead = pacmanCurrentIndex + pacmanDirection * 2;
+            return ahead + (ahead - blinky.currentIndex); // Inky
+        }
+        if (dog.className === "rocky") {
+            let distance = Math.abs(dog.currentIndex - pacmanCurrentIndex);
+            if (distance > 8) return pacmanCurrentIndex;
+            return width * (width - 2); // Clyde runs away to corner
+        }
     }
 
-    function moveGhost(ghost) {
+function moveDog(dog) { 
         const directions = [-1, 1, width, -width];
         let direction = directions[Math.floor(Math.random() * directions.length)];
 
-        ghost.timerId = setInterval(() => {
-            if (!squares[ghost.currentIndex + direction].classList.contains("ghost") &&
-                !squares[ghost.currentIndex + direction].classList.contains("wall")) {
-                squares[ghost.currentIndex].classList.remove(ghost.className, "ghost", "scared-ghost");
-                ghost.currentIndex += direction;
-                squares[ghost.currentIndex].classList.add(ghost.className, "ghost");
-            } else direction = directions[Math.floor(Math.random() * directions.length)];
+dog.timerId = setInterval(() => {
+    const directions = [-1, 1, width, -width];
+    let target = getTarget(dog);
 
-            if (ghost.isScared) squares[ghost.currentIndex].classList.add("scared-ghost");
+    let bestDirection = directions[0];
+    let shortestDistance = Infinity;
 
-            if (ghost.isScared && squares[ghost.currentIndex].classList.contains("pac-man")) {
-                ghost.isScared = false;
-                squares[ghost.currentIndex].classList.remove(ghost.className, "ghost", "scared-ghost");
-                ghost.currentIndex = ghost.startIndex;
-                score += 100;
-                eatDogs.play();
-                scoreDisplay.innerHTML = score;
-                squares[ghost.currentIndex].classList.add(ghost.className, "ghost");
+    directions.forEach(dir => {
+        let nextIndex = dog.currentIndex + dir;
+        if (
+            !squares[nextIndex].classList.contains("wall") &&
+            !squares[nextIndex].classList.contains("dog-lair") &&
+            !squares[nextIndex].classList.contains("dog") // 🚫 no stacking
+        ) {
+            let distance = Math.hypot(
+                (nextIndex % width) - (target % width),
+                Math.floor(nextIndex / width) - Math.floor(target / width)
+            );
+            if (distance < shortestDistance) {
+                shortestDistance = distance;
+                bestDirection = dir;
             }
+            
+        }
+    });
 
-            checkForGameOver();
-        }, ghost.speed);
+    // remove old position
+    squares[dog.currentIndex].classList.remove(dog.className, "dog", "scared-dog");
+
+    // update position
+    dog.currentIndex += bestDirection;
+    squares[dog.currentIndex].classList.add(dog.className, "dog");
+
+    // scared state
+    if (dog.isScared) {
+        squares[dog.currentIndex].classList.add("scared-dog");
     }
 
+    // eaten by pacman
+if (dog.isScared && squares[dog.currentIndex].classList.contains("pac-man")) {
+    dog.isScared = false;
+    dog.isReturning = true; // 👀 returning state
+    squares[dog.currentIndex].classList.remove(dog.className, "dog", "scared-dog");
+    dog.currentIndex = dog.startIndex; // back to lair
+    score += 100;
+    eatDogs.play();
+    scoreDisplay.innerHTML = score;
+    squares[dog.currentIndex].classList.add(dog.className, "dog", "returning");
+}
+
+
+    checkForGameOver();
+}, dog.speed);
+    }
     function checkForGameOver() {
-        if (squares[pacmanCurrentIndex].classList.contains("ghost") &&
-            !squares[pacmanCurrentIndex].classList.contains("scared-ghost")) {
+        if (
+            squares[pacmanCurrentIndex].classList.contains("dog") &&
+            !squares[pacmanCurrentIndex].classList.contains("scared-dog")
+        ) {
             lives--;
             updateLives();
 
@@ -221,22 +279,22 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     function gameOver() {
-        ghosts.forEach(ghost => clearInterval(ghost.timerId));
-        document.removeEventListener("keyup", movePacman);
+        dogs.forEach(dog => clearInterval(dog.timerId));
+        document.removeEventListener("keyup", updatePacmanDirection);
         gameOverPopup.style.display = "flex";
     }
 
     function checkForEscape() {
         if (squares[pacmanCurrentIndex].classList.contains("escape-door")) {
-            ghosts.forEach(ghost => clearInterval(ghost.timerId));
-            document.removeEventListener("keyup", movePacman);
+            dogs.forEach(dog => clearInterval(dog.timerId));
+            document.removeEventListener("keyup", updatePacmanDirection);
 
             setTimeout(() => {
                 popup.style.display = "flex";
             }, 200);
         }
     }
-        //check for a win - change the winning score to whatever you wish
+         //check for a win - change the winning score to whatever you wish
     function checkForWin() {
         if (score >= 274) {
             ghosts.forEach(ghost => clearInterval(ghost.timerId))
@@ -248,45 +306,49 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
+
     function startGame() {
-        // Remove old squares
         squares.forEach(square => square.remove());
         squares.length = 0;
 
-        // Hide popups
         popup.style.display = "none";
         gameOverPopup.style.display = "none";
 
-        // Reset score & lives
         score = 0;
         lives = 3;
         updateLives();
         scoreDisplay.innerHTML = score;
 
-        // Create board and characters
         createBoard();
 
         pacmanCurrentIndex = 29;
+        pacmanDirection = 1;
         squares[pacmanCurrentIndex].classList.add("pac-man");
 
-        ghosts.forEach(ghost => {
-            clearInterval(ghost.timerId);
-            ghost.currentIndex = ghost.startIndex;
-            ghost.isScared = false;
-            squares[ghost.currentIndex].classList.add(ghost.className, "ghost");
-            moveGhost(ghost);
+        dogs.forEach(dog => {
+            clearInterval(dog.timerId);
+            dog.currentIndex = dog.startIndex;
+            dog.isScared = false;
+            squares[dog.currentIndex].classList.add(dog.className, "dog");
+            moveDog(dog);
         });
 
-        document.addEventListener("keyup", movePacman);
+document.addEventListener("keydown", updatePacmanDirection);
+
+// Move Pac-Man every 150ms in the current direction
+setInterval(movePacmanContinuously, 150);
     }
 
     // ----------------- Event Listeners -----------------
-    closeBtn.addEventListener("click", () => popup.style.display = "none");
-    closeGameOverBtn.addEventListener("click", () => gameOverPopup.style.display = "none");
+    closeBtn.addEventListener("click", () => (popup.style.display = "none"));
+    closeGameOverBtn.addEventListener(
+        "click",
+        () => (gameOverPopup.style.display = "none")
+    );
     restartBtn.addEventListener("click", startGame);
-    homeBtn.addEventListener("click", () => window.location.href = "index.html");
+    homeBtn.addEventListener("click", () => (window.location.href = "index.html"));
 
-    window.addEventListener("click", (e) => {
+    window.addEventListener("click", e => {
         if (e.target === popup) popup.style.display = "none";
         if (e.target === gameOverPopup) gameOverPopup.style.display = "none";
     });

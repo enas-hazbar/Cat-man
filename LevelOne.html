@@ -34,7 +34,44 @@
     <button class="home-btn"> <a href="homepage.html" class="FontColor1">Return to Homepage</a> </button>
   </div>
 </div>
+<div id="countdown" class="countdown"></div>
 
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+  const countdownEl = document.getElementById("countdown");
+  let countdown = 3;
+
+  function startCountdown(callback) {
+    countdownEl.style.display = "block";
+    countdownEl.textContent = countdown;
+
+    const timer = setInterval(() => {
+      countdown--;
+      if (countdown > 0) {
+        countdownEl.textContent = countdown;
+      } else {
+        clearInterval(timer);
+        countdownEl.textContent = "GO!";
+        setTimeout(() => {
+          countdownEl.style.display = "none";
+          callback(); // start the game
+        }, 1000);
+      }
+    }, 1000);
+  }
+
+  // Call this to start the game after countdown
+  startCountdown(() => {
+    initGame(); // put your game start logic in here
+  });
+
+  function initGame() {
+    // all your game setup code (creating grid, stars, player, etc.)
+    console.log("Game started!");
+  }
+});
+
+</script>
 </body>
 
 </html> 

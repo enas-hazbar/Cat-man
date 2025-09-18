@@ -12,10 +12,7 @@
     grid-template-columns: repeat(28, 20px); /* 28 cells per row */
     grid-template-rows: repeat(31, 20px);    /* 31 rows total */
     gap: 0; /* remove space between cells */
-    padding: 0;
-    margin: 0;
-    margin-left: 400px;
-    margin-top: 50px;
+    justify-content: center;
 }
   
 .grid div {
@@ -52,9 +49,9 @@
     background-size: 20px;
 }
 
-.blinky {
+.chase {
     /* background-color: #ff0000; */
-    background-image:url(images/DogChase.png);
+    background-image:url(images/Chase.png);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -62,9 +59,9 @@
     transition: 0.1s linear;
 }
 
-.pinky {
+.skye {
     /* background-color: #ffb8ff; */
-    background-image:url(images/DogGirl.png);
+    background-image:url(images/Skye.png);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -72,9 +69,9 @@
     transition: 0.1s linear;
 }
 
-.inky {
+.zuma {
     /* background-color: #00ffff; */
-    background-image:url(images/DogOne.png);
+    background-image:url(images/Zuma.png);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -82,9 +79,9 @@
     transition: 0.1s linear;
 }
 
-.clyde {
+.rocky {
     /* background-color: #ffb851;      */
-    background-image:url(images/DogTwo.png.png);
+    background-image:url(images/Rocky.png);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -103,7 +100,7 @@
     transition: 0.1s linear;
 }
 
-.scared-ghost {
+.scared-dog {
     background-image:url(images/FrozenDogs.png);
     background-size: cover;
     background-position: center;
@@ -390,12 +387,12 @@ width: 100px; /* size of overlay image */
 }
 
 .scoreboard h3 {
-  margin-left: 355px;  /* adjust value as you like */
+  margin-left: 435px;  /* adjust value as you like */
 }
 
 /* Push lives a little inward from the right */
 .scoreboard #lives {
-  margin-right: 520px; /* adjust value as you like */
+  margin-right: 430px; /* adjust value as you like */
   font-weight: bold;
 }
 /* .body1{
@@ -599,3 +596,14 @@ color: green;
   text-decoration: none;
   display: inline-block;
  }
+ .countdown {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 200px;
+  font-weight: bold;
+  color: white;
+  text-shadow: 2px 2px 8px rgb(255, 225, 255);
+  display: none; /* hidden until used */
+}

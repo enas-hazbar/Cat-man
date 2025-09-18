@@ -67,11 +67,11 @@
 
     <!-- Characters -->
     <div class="popup-page">
-      <h2 class="HeadingTwo">Characters <img src="images/Cat.png" class="CatPopup"> <img src="images/DogChase.png" class="DogPopup"></h2>  <br />
+      <h2 class="HeadingTwo">Characters <img src="images/Cat.png" class="CatPopup"> <img src="images/Chase.png" class="DogPopup"></h2>  <br />
       <!-- 🐱🐶 🐟  -->
       <ul>
         <li class="text2"> <img src="images/Cat.png" class="CatPopup2"><strong>**Cat-Man**</strong>  → Your player.</li> <br />
-        <li class="text2"> <img src="images/DogChase.png" class="DogPopup2"> <strong>**Dogs**</strong> → Avoid them unless frozen dogs.</li>
+        <li class="text2"> <img src="images/Chase.png" class="DogPopup2"> <strong>**Dogs**</strong> → Avoid them unless frozen dogs.</li>
         <br />
         <li class="text2"> <img src="images/Fish.png" class="FishPopup"> <strong>**Fish**</strong> → Eat and collect  points.</li>
         <br />
@@ -158,8 +158,29 @@ document.addEventListener("DOMContentLoaded", () => {
       showPage(i);
     });
   });
-});
 
+  // Keyboard navigation
+  window.addEventListener("keydown", (e) => {
+    if (popup.style.display === "block") {
+      if (e.code === "Enter" || e.code === "Space" || e.code === "ArrowRight") {
+        e.preventDefault();
+        const nextPage = currentPage + 1;
+        if (nextPage < pages.length) {
+          showPage(nextPage);
+        } else {
+          popup.style.display = "none"; // close if last page
+        }
+      } else if (e.code === "ArrowLeft") {
+        e.preventDefault();
+        const prevPage = currentPage - 1;
+        if (prevPage >= 0) {
+          showPage(prevPage);
+        }
+      }
+    }
+  });
+});
 </script>
+
 </body>
 </html> 
