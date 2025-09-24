@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-   <title>Pac-man</title>
+   <title>Cat-man</title>
    <script> </script>
    <link rel="stylesheet" href="style.css">
    <img src="images/logo.png" class="logo" alt="logo" />
@@ -12,27 +12,37 @@
 <div class="row">
   <div class="column">
     <div class="image-wrapper">
-      <img src="images/EscapeDoor.png" alt="escape" style="width:100%">
-      <img src="images/levelone.png" class="overlay">
-      <img src="images/easy-level.png" class="overlay1" />
-      <button class="multi-color-btn"> <a href="LevelOne.html" class="FontColor"> Easy Level</a> </button>
+      <img src="images/EscapeDoor.png" alt="escape" >
+      <a href='level.html?maze=1'>
+<video autoplay loop muted playsinline class="overlay">
+    <source src="images/LevelOne.mp4" type="video/mp4">
+  </video>   
+  </a>   
+  <img src="images/easy-level.png" class="overlay1" /> 
+      <button class="multi-color-btn" onclick="window.location.href='level.html?maze=1'"> Easy Level </button>
     </div>
   </div>
   <div class="column">
     <div class="image-wrapper">
-    <img src="images/EscapeDoor.png" alt="escape" style="width:100%">
-    <img src="images/leveltwo.png" class="overlay">
+    <img src="images/EscapeDoor.png" alt="escape" >
+      <a href='level.html?maze=2'>
+      <video autoplay loop muted playsinline class="overlay">
+    <source src="images/LevelTwo.mp4" type="video/mp4">
+  </video>   </a> 
     <img src="images/med-level.png" class="overlay2" />
-    <button class="multi-color-btn1">  <a href="LevelTwo.html" class="FontColor">Med Level</a></button>
+    <button class="multi-color-btn1" onclick="window.location.href='level.html?maze=2'">  Med Level</button>
     </div>
   </div>
   <div class="column">
     <div class="image-wrapper">
-    <img src="images/EscapeDoor.png" alt="escape" style="width:100%">
-    <img src="images/levelthree.png" class="overlay">
+    <img src="images/EscapeDoor.png" alt="escape" >
+      <a href='level.html?maze=3'>
+      <video autoplay loop muted playsinline class="overlay0">
+    <source src="images/LevelThree.mp4" type="video/mp4">
+  </video> </a>
     <img src="images/hard-level.png" class="overlay1" />
-    <button class="multi-color-btn1"> <a href="LevelThree.html" class="FontColor">Hard Level</a></button>
-<script src="app.js"></script>
+    <button class="multi-color-btn1" onclick="window.location.href='level.html?maze=3'">Hard Level</button>
+<!-- <script src=""></script> -->
     </div>
   </div>
 </div>
@@ -43,6 +53,7 @@
     <img src="images/catsteps.png" alt="steps" class="steps">
     <span>Instructions</span>
   </button>
+  <p style="color: grey; text-align: left; position: relative; top: -20px;">@Made by Enas</p>
 </div>
 <!-- Popup (hidden by default) -->
 <div id="popup" class="popup">
@@ -62,6 +73,7 @@
         <li class="text2">Escape the maze to win the level, with the escape door.</li>
       </ul>
       <br />
+      <p style="color: rgb(116, 110, 110);">"Use ⬅️➡️ arrows, Enter, or Space to go to the next page."</p>
       <!-- <button class="next-btn">Next ➡️</button> -->
     </div>
 
@@ -75,25 +87,28 @@
         <br />
         <li class="text2"> <img src="images/Fish.png" class="FishPopup"> <strong>**Fish**</strong> → Eat and collect  points.</li>
         <br />
-        <li class="text2"> <img src="images/SalmonFish.png" class="SalmonPopup"> <strong>**Salmon** </strong>→ Eat the dogs and collect points</li> <br />
+        <li class="text2"> <img src="images/SalmonFish.png" class="SalmonPopup"> <strong>**Salmon** </strong>→ Eat the frozen dogs and collect points</li> <br />
         <li class="text2"> <img src="images/EscapeDoor.png" class="EscapeDoor"> <strong>**Escape Door** </strong>→ Escape the maze</li> <br />
 
 
       </ul>
       <!-- <button class="prev-btn">⬅️ Back</button>
       <button class="next-btn">Next ➡️</button> -->
+            <p style="color: rgb(116, 110, 110);">"Use ⬅️➡️arrows, Enter, or Space to go to the next page"</p>
+
     </div>
     <!-- Lose and win -->
         <div class="popup-page">
       <h2><strong class="Winning">Winning</strong> <strong>and</strong> <strong class="Losing">Losing</strong></h2>
       <ul>
         <li class="text2"> <strong class="Winning">Winning:</strong> </li> <br />
-        <li class="text2"> <strong class="Easy">Easy</strong> & <strong class="Med">Medium</strong> <strong class="LevelEM">levels:</strong> To win on these levels, you need to escape through the maze door </li> <br />
-        <li class="text2"><strong class="Hard">Hard Level:</strong> There are two ways to win: either <strong> escape the maze </strong> or <strong>earn 274 points</strong></li> <br />
+        <li class="text2"> <strong class="Easy">Easy</strong> , <strong class="Med">Medium</strong> & <strong class="Hard">Hard</strong>  <strong class="LevelEM">levels:</strong> To win on these levels, you need to escape through the maze door </li> <br />
         <li class="text2"><strong class="Losing">Losing:</strong> You have three lives. If you are caught by the dogs three times, you lose the game</li> <br />
       </ul>
       <!-- <button class="prev-btn">⬅️ Back</button>
       <button class="close-btn">Finish ✖️</button> -->
+            <p style="color: rgb(116, 110, 110);">"Use ⬅️➡️ arrows, Enter, or Space to go to the next page."</p>
+
     </div>
     <!-- Scoring -->
     <div class="popup-page">
@@ -105,6 +120,8 @@
       </ul>
       <!-- <button class="prev-btn">⬅️ Back</button>
       <button class="close-btn">Finish ✖️</button> -->
+            <p style="color: rgb(116, 110, 110);">"Use ⬅️➡️ arrows, Enter, or Space to go to the next page."</p>
+
     </div>
      <!-- Dots navigation -->
     <div class="dots">

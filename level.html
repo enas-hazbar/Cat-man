@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Cat-man</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="mazes.js"></script>
+  <script src="game.js" defer></script>
+</head>
+<body class="body">
+  <div class="scoreboard">
+    <h3>Score: <span id="score"></span></h3>
+    <div id="lives"></div>
+  </div>
+  <div id="scared-clock" class="scared-clock">
+  <svg width="60" height="60">
+    <!-- background circle -->
+    <circle cx="30" cy="30" r="25" stroke="yellow" stroke-width="4" fill="transparent"/>
+    <!-- progress circle -->
+    <circle id="scared-clock-progress" cx="30" cy="30" r="25" stroke="green" stroke-width="4" fill="transparent"
+            stroke-dasharray="157" stroke-dashoffset="0" transform="rotate(-90 30 30)"/>
+    <!-- number -->
+    <text id="scared-clock-number" x="30" y="35" text-anchor="middle" font-size="20" fill="black" font-weight="bold">10</text>
+  </svg>
+</div>
+
+
+  <div id="scared-clock" class="scared-clock">…</div>
+  <div class="grid"></div>
+
+  <!-- Win Popup -->
+  <div id="popup1" class="popup">
+    <div class="popup-content">
+      <span class="close">&times;</span>
+      <img src="images/Win.png" class="Win">
+      <p class="Wintext"></p>
+      <button class="next-btn">NEXT LEVEL ➔</button>
+    </div>
+  </div>
+
+  <!-- Game Over -->
+  <div id="gameOverPopup" class="popup">
+    <div class="popup-content">
+      <span class="close-gameover">&times;</span>
+      <p class="game-over-text">Game Over!</p>
+      <button class="restart-btn" onclick="window.location.href='level.html?'">Restart Level</button>
+      <button class="home-btn" onclick="window.location.href='homepage.html?'">Return to Homepage</button>
+    </div>
+  </div>
+  <div id="countdown" class="countdown"></div>
+</body>
+</html>
