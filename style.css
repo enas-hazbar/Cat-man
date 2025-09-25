@@ -1,12 +1,4 @@
-/* .grid {
-    display: flex;
-    flex-wrap: wrap;
-    width: 560px;
-    height: 560px;
-    margin-left: 400px;
-    margin-top: 100px;
-    /* border: solid #ffffff; */
-    /* background-color:#fff1f1;/ */
+
 .grid {
   display: grid;
   grid-template-columns: repeat(28, 24px);
@@ -21,10 +13,7 @@
 }
 
 
-.pac-dot {
-    /* background-color: #ffd277bd;   
-    border: 5px solid white;
-    box-sizing: border-box; */
+.fish {
     background-image:url(images/Fish.png);
     background-size: cover;
     background-position: center;
@@ -38,9 +27,7 @@
     background-color:#ffd9d9;
 }
 
-.power-pellet {
-    /* background-color: #ffb8ae;   
-    border-radius: 10px; */
+.salmon {
     background-image:url(images/SalmonFish.png);
     background-size: cover;
     background-position: center;
@@ -51,7 +38,6 @@
 }
 
 .chase {
-    /* background-color: #ff0000; */
     background-image:url(images/Chase.png);
     background-size: cover;
     background-position: center;
@@ -61,7 +47,6 @@
 }
 
 .skye {
-    /* background-color: #ffb8ff; */
     background-image:url(images/Skye.png);
     background-size: cover;
     background-position: center;
@@ -71,7 +56,6 @@
 }
 
 .zuma {
-    /* background-color: #00ffff; */
     background-image:url(images/Zuma.png);
     background-size: cover;
     background-position: center;
@@ -81,7 +65,6 @@
 }
 
 .rocky {
-    /* background-color: #ffb851;      */
     background-image:url(images/Rocky.png);
     background-size: cover;
     background-position: center;
@@ -90,9 +73,7 @@
     transition: 0.1s linear;
 }
 
-.pac-man {
-    /* background-color: yellow;
-    border-radius: 10px; */
+.cat-man {
     background-image:url(images/Cat.png);
     background-size: cover;
     background-position: center;
@@ -111,9 +92,6 @@
 }
 
 .escape-door {
-    /* background-color: #00ff7f; 
-    border-radius: 4px;
-    border: 2px solid #006400; */
     background-image: url(images/EscapeDoor.png);
     background-size: cover;
     background-position: center;
@@ -122,8 +100,6 @@
     transition: 0.1s linear;    
 }
 
-
-/* homepage style */
 .body{
     background-color: #FFEBEB;
 }
@@ -136,65 +112,61 @@
 .column {
   float: left;
   width: 33.33%;
-  position: relative; /* needed */
+  position: relative;
   top: -24px;
 }
 
-/* Clearfix */
 .row::after {
   content: "";
   clear: both;
   display: table;
 }
 
-/* Position wrapper */
 .image-wrapper {
-  position: relative; /* makes overlay positioning work */
+  position: relative; 
   display: inline-block;
 }
 
-/* Overlay image */
 .overlay {
   position: absolute;
-   top: 170px;  /* adjust vertical position */
-  left: 93px;  /* adjust horizontal position */
-  width: 230px; /* size of overlay image */
+   top: 170px;  
+  left: 93px;
+  width: 230px;
   object-fit: cover;
 
 }
 .overlay:hover {
-    background: #ff7fc6;   /* darker pink on hover */
+    background: #ff7fc6;
   box-shadow: 0 7px 0 #c8a5ff;
   transform: translateY(-5px);
 }
 .overlay0 {
     position: absolute;
-   top: 145px;  /* adjust vertical position */
-  left: 93px;  /* adjust horizontal position */
-  width: 230px; /* size of overlay image */
+   top: 145px; 
+  left: 93px; 
+  width: 230px;
 }
 .overlay0:hover {
-    background: #ff7fc6;   /* darker pink on hover */
+    background: #ff7fc6;
   box-shadow: 0 7px 0 #c8a5ff;
   transform: translateY(-5px);
 }
 .overlay1 {
 position: absolute;
-top: 80px;  /* adjust vertical position */
-left: 150px;  /* adjust horizontal position */
-width: 110px; /* size of overlay image */
+top: 80px;  
+left: 150px; 
+width: 110px;
   object-fit: cover;
 }
 .overlay2 {
 position: absolute;
-top: 80px;  /* adjust vertical position */
-left: 155px;  /* adjust horizontal position */
-width: 100px; /* size of overlay image */
+top: 80px; 
+left: 155px; 
+width: 100px;
 }
-/* Button overlay */
 .multi-color-btn {
   position: absolute;
-  bottom: 80px;   /* move button up/down */
+  bottom: 80px; 
   left: 45%;
   transform: translateX(-50%);
   padding: 10px 20px;
@@ -203,16 +175,12 @@ width: 100px; /* size of overlay image */
   border: none;
   border-radius: 8px;
   cursor: pointer;
-  
-  /* 3-color gradient background */
   background: linear-gradient(75deg, #ffa270, #ff7e6e, #ffebeb);
-  
-  /* Optional: nice shadow */
   box-shadow: 0px 4px 8px rgba(0,0,0,0.3);
 }
 .multi-color-btn1 {
   position: absolute;
-  bottom: 90px;   /* move button up/down */
+  bottom: 90px;  
   left: 45%;
   transform: translateX(-50%);
   padding: 10px 20px;
@@ -221,48 +189,37 @@ width: 100px; /* size of overlay image */
   border: none;
   border-radius: 8px;
   cursor: pointer;
-  
-  /* 3-color gradient background */
   background: linear-gradient(75deg, #ffa270, #ff7e6e, #ffebeb);
-  
-  /* Optional: nice shadow */
   box-shadow: 0px 4px 8px rgba(0,0,0,0.3);
 }
-/* Center the button below the row */
 .button-container {
   text-align: center;
   margin-top: 20px;
 }
 
-/* Button style */
 .cute-btn {
   position: relative;
-  background: linear-gradient(180deg, #555, #343434); /* light on top, dark bottom */
+  background: linear-gradient(180deg, #555, #343434); 
   color: white;
   font-size: 28px;
   font-family: "Courier New", monospace;
   border: none;
-  border-radius: 50px;       /* pill shape */
+  border-radius: 50px;      
   padding: 20px 50px;
   cursor: pointer;
-  
-  /* Shadows for depth */
-  box-shadow: inset 0px 2px 6px rgba(255,255,255,0.4), /* top inner highlight */
-              inset 0px -3px 6px rgba(0,0,0,0.6),       /* bottom inner shadow */
-              0px 5px 12px rgba(0,0,0,0.5);             /* outer drop shadow */
+  box-shadow: inset 0px 2px 6px rgba(255,255,255,0.4), 
+              inset 0px -3px 6px rgba(0,0,0,0.6),       
+              0px 5px 12px rgba(0,0,0,0.5);             
 }
 
-
-/* Text styling */
 .cute-btn span {
   position: relative;
   z-index: 2;
 }
 
-/* Cat image on top */
 .cute-btn .cat {
   position: absolute;
-  top: -69px;    /* adjust to place cat above button */
+  top: -69px;    
   left: 50%;
   transform: translateX(-50%);
   z-index: 3;
@@ -275,22 +232,20 @@ width: 100px; /* size of overlay image */
   transform: translate(-50%, -50%);
   width: 100%;
   z-index: 1;
-    opacity: 0.70;   /* lighter paw prints */
+    opacity: 0.70;   
 }
 
-/* Popup background */
 .popup {
-  display: none; /* Hidden by default */
+  display: none; 
   position: fixed;
   z-index: 1000;
   left: 0;
   top: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0,0,0,0.6); /* semi-transparent black */
+  background-color: rgba(0,0,0,0.6);
 }
 
-/* Popup box */
 .popup-content {
   background: #fff;
   margin: 10% auto;
@@ -303,7 +258,6 @@ width: 100px; /* size of overlay image */
   box-shadow: 0px 5px 15px rgba(0,0,0,0.3);
 }
 
-/* Close button */
 .close {
   position: absolute;
   top: 10px;
@@ -313,7 +267,6 @@ width: 100px; /* size of overlay image */
   cursor: pointer;
 }
 
-/* Pages inside popup */
 .popup-page {
   display: none;
 }
@@ -322,13 +275,11 @@ width: 100px; /* size of overlay image */
   display: block;
 }
 
-/* Dots container */
 .dots {
   margin-top: 20px;
   text-align: center;
 }
 
-/* Individual dots */
 .dot {
   height: 12px;
   width: 12px;
@@ -346,47 +297,44 @@ width: 100px; /* size of overlay image */
   background-color: #f8d0d0;
 }
 
-/* Text alignment example */
 .text2 {
   text-align: left;
 }
-/* .Controller {
-  width: 200px;
-} */
+
  .CatPopup {
   width: 35px;
   position: absolute;
-  top: 47px;  /* adjust vertical position */
+  top: 47px;  
   
  }
   .DogPopup {
   width: 35px;
   position: absolute;
-  top: 43px;  /* adjust vertical position */
+  top: 43px;  
   left: 310px;
  }
  .CatPopup2{
   width: 25px;
   position: absolute;
-  top: 123px;  /* adjust vertical position */
+  top: 123px; 
   left: 40px
  }
  .DogPopup2 {
     width: 25px;
   position: absolute;
-  top: 160px;  /* adjust vertical position */
+  top: 160px; 
   left: 35px
  }
  .FishPopup {
     width: 55px;
   position: absolute;
-  top: 175px;  /* adjust vertical position */
+  top: 175px;
   left: 28px
  }
  .SalmonPopup {
     width: 20px;
   position: absolute;
-  top: 230px;  /* adjust vertical position */
+  top: 230px; 
   left: 45px
  }
  .HeadingTwo {
@@ -398,43 +346,39 @@ width: 100px; /* size of overlay image */
   text-decoration: none;
   display: inline-block;
  }
-/* Scoreboard container */
 .scoreboard {
   display: flex;
-  justify-content: space-between; /* puts score left, lives right */
+  justify-content: space-between; 
   align-items: center;
-  margin: 20px 50px; /* space from top/edges */
+  margin: 20px 50px; 
   font-size: 18px;
 }
 
 .scoreboard h3 {
-  margin-left: 370px;  /* adjust value as you like */
+  margin-left: 370px;  
 }
 
 
-/* Push lives a little inward from the right */
 .scoreboard #lives {
-  margin-right: 360px; /* adjust value as you like */
+  margin-right: 360px;
   font-weight: bold;
 }
 @media only screen and (max-width: 1459px) {
  .scoreboard h3 {
-    margin-left: 100px;  /* adjust value as you like */
+    margin-left: 100px; 
 
  }
  .scoreboard #lives {
-  margin-right: 90px; /* adjust value as you like */
+  margin-right: 90px;
   font-weight: bold;
 }
 
 }
-/* .body1{
-  background-color: #fff7f7;
-} */
+
  .EscapeDoor{
-      width: 20px;
+  width: 20px;
   position: absolute;
-  top: 265px;  /* adjust vertical position */
+  top: 265px; 
   left: 45px
  }
  .Winning{
@@ -457,7 +401,6 @@ color: green;
  .Hard {
   color:#ff9000;
  }
-    /* Popup overlay */
     .popup {
       position: fixed;
       top: 0;
@@ -465,12 +408,11 @@ color: green;
       width: 100%;
       height: 100%;
       background: rgba(0,0,0,0.5);
-      display: none; /* hidden by default */
+      display: none; 
       justify-content: center;
       align-items: center;
     }
 
-    /* Popup box */
     .popup-content {
       background: #f6e1f3;
       padding: 20px;
@@ -490,19 +432,17 @@ color: green;
   align-items: center;
   justify-content: center;
   margin-left: 140px;
-  gap: 15px; /* space between text and arrow */
+  gap: 15px; 
   
-  background: #ff9ad1;   /* pink background */
+  background: #ff9ad1;   
   color: white;
   font-weight: bold;
   font-size: 18px;
   border: none;
-  border-radius: 25px;   /* rounded pill shape */
+  border-radius: 25px;  
   padding: 12px 28px;
   cursor: pointer;
-  
-  /* subtle shadow for the "double layer" effect */
-  box-shadow: 0 6px 0 #d9b6ff;
+    box-shadow: 0 6px 0 #d9b6ff;
   
   transition: all 0.2s ease;
   
@@ -512,20 +452,16 @@ color: green;
   align-items: center;
   justify-content: center;
   margin-left: 120px;
-  gap: 15px; /* space between text and arrow */
-  
-  background: #ff9ad1;   /* pink background */
+  gap: 15px; 
+  background: #ff9ad1;  
   color: white;
   font-weight: bold;
   font-size: 18px;
   border: none;
-  border-radius: 25px;   /* rounded pill shape */
+  border-radius: 25px;   
   padding: 12px 28px;
   cursor: pointer;
-  
-  /* subtle shadow for the "double layer" effect */
   box-shadow: 0 6px 0 #d9b6ff;
-  
   transition: all 0.2s ease;
   
 }
@@ -543,7 +479,7 @@ color: green;
 }
 
 .next-btn:hover {
-  background: #ff7fc6;   /* darker pink on hover */
+  background: #ff7fc6;  
   box-shadow: 0 4px 0 #c8a5ff;
   transform: translateY(-2px);
 }
@@ -553,7 +489,6 @@ color: green;
   box-shadow: 0 2px 0 #c8a5ff;
 }
 
-/* Game Over Popup Style */
 #gameOverPopup {
      position: fixed;
       top: 0;
@@ -561,7 +496,7 @@ color: green;
       width: 100%;
       height: 100%;
       background: rgba(0,0,0,0.5);
-      display: none; /* hidden by default */
+      display: none; 
       justify-content: center;
       align-items: center;
 }
@@ -590,15 +525,13 @@ color: green;
   margin: 5px;
   border: solid 3px;
     border-color: #d9b6ff;
-  background: #ffffff;   /* pink background */
+  background: #ffffff;   
   color: rgb(255, 0, 0);
   font-weight: bold;
   font-size: 18px;
-  border-radius: 8px;   /* rounded pill shape */
+  border-radius: 8px; 
   padding: 12px 28px;
   cursor: pointer;
-  
-  /* subtle shadow for the "double layer" effect */
   box-shadow: 0 2px 0 #d9b6ff;
   transition: all 0.2s ease;
 
@@ -618,7 +551,6 @@ color: green;
   color: #fff;
 }
 
-/* Fade animation */
 @keyframes popupFade {
   from { transform: scale(0.5); opacity: 0; }
   to { transform: scale(1); opacity: 1; }
@@ -638,7 +570,7 @@ color: green;
   font-weight: bold;
   color: white;
   text-shadow: 2px 2px 8px rgb(255, 225, 255);
-  display: none; /* hidden until used */
+  display: none; 
 }
 
 .scared-clock {
@@ -647,7 +579,7 @@ color: green;
   left: 50%;
   transform: translateX(-50%);
   z-index: 1000;
-  display: none; /* hidden by default */
+  display: none; 
 }
 
 .scared-clock circle {

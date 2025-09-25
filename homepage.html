@@ -42,11 +42,9 @@
   </video> </a>
     <img src="images/hard-level.png" class="overlay1" />
     <button class="multi-color-btn1" onclick="window.location.href='level.html?maze=3'">Hard Level</button>
-<!-- <script src=""></script> -->
     </div>
   </div>
 </div>
-<!-- Cute button under the three images -->
 <div class="button-container">
   <button class="cute-btn">
     <img src="images/ButtonCat.png" alt="cat" class="cat">
@@ -55,7 +53,6 @@
   </button>
   <p style="color: grey; text-align: left; position: relative; top: -20px;">@Made by Enas</p>
 </div>
-<!-- Popup (hidden by default) -->
 <div id="popup" class="popup">
   <div class="popup-content">
     <span class="close">&times;</span>
@@ -63,7 +60,6 @@
     <!-- How To Play -->
     <div class="popup-page active">
       <h2>How to play 🐾 </h2>
-      <!-- <img src="images/Controller.png" alt="Controller" class="Controller"> -->
       <br />
       <ul>
         <li><p>Use the arrow keys (⬆️⬇️⬅️➡️) to move Cat-Man around the maze.</p></li>
@@ -74,13 +70,11 @@
       </ul>
       <br />
       <p style="color: rgb(116, 110, 110);">"Use ⬅️➡️ arrows, Enter, or Space to go to the next page."</p>
-      <!-- <button class="next-btn">Next ➡️</button> -->
     </div>
 
     <!-- Characters -->
     <div class="popup-page">
       <h2 class="HeadingTwo">Characters <img src="images/Cat.png" class="CatPopup"> <img src="images/Chase.png" class="DogPopup"></h2>  <br />
-      <!-- 🐱🐶 🐟  -->
       <ul>
         <li class="text2"> <img src="images/Cat.png" class="CatPopup2"><strong>**Cat-Man**</strong>  → Your player.</li> <br />
         <li class="text2"> <img src="images/Chase.png" class="DogPopup2"> <strong>**Dogs**</strong> → Avoid them unless frozen dogs.</li>
@@ -92,8 +86,6 @@
 
 
       </ul>
-      <!-- <button class="prev-btn">⬅️ Back</button>
-      <button class="next-btn">Next ➡️</button> -->
             <p style="color: rgb(116, 110, 110);">"Use ⬅️➡️arrows, Enter, or Space to go to the next page"</p>
 
     </div>
@@ -105,8 +97,6 @@
         <li class="text2"> <strong class="Easy">Easy</strong> , <strong class="Med">Medium</strong> & <strong class="Hard">Hard</strong>  <strong class="LevelEM">levels:</strong> To win on these levels, you need to escape through the maze door </li> <br />
         <li class="text2"><strong class="Losing">Losing:</strong> You have three lives. If you are caught by the dogs three times, you lose the game</li> <br />
       </ul>
-      <!-- <button class="prev-btn">⬅️ Back</button>
-      <button class="close-btn">Finish ✖️</button> -->
             <p style="color: rgb(116, 110, 110);">"Use ⬅️➡️ arrows, Enter, or Space to go to the next page."</p>
 
     </div>
@@ -118,12 +108,9 @@
         <li class="text2">Eat a <strong>Salmon</strong>  = <strong>10</strong> points</li> <br />
         <li class="text2">Eat a <strong>Frozen Dog</strong> = <strong>100</strong> points</li> <br />
       </ul>
-      <!-- <button class="prev-btn">⬅️ Back</button>
-      <button class="close-btn">Finish ✖️</button> -->
             <p style="color: rgb(116, 110, 110);">"Use ⬅️➡️ arrows, Enter, or Space to go to the next page."</p>
 
     </div>
-     <!-- Dots navigation -->
     <div class="dots">
       <span class="dot active"></span>
       <span class="dot"></span>
@@ -151,32 +138,27 @@ document.addEventListener("DOMContentLoaded", () => {
     currentPage = index;
   }
 
-  // Open popup at first page
   button.addEventListener("click", () => {
     popup.style.display = "block";
     showPage(0);
   });
 
-  // Close popup
   closeBtn.addEventListener("click", () => {
     popup.style.display = "none";
   });
 
-  // Close if clicking outside
   window.addEventListener("click", (e) => {
     if (e.target === popup) {
       popup.style.display = "none";
     }
   });
 
-  // Dot navigation
   dots.forEach((dot, i) => {
     dot.addEventListener("click", () => {
       showPage(i);
     });
   });
 
-  // Keyboard navigation
   window.addEventListener("keydown", (e) => {
     if (popup.style.display === "block") {
       if (e.code === "Enter" || e.code === "Space" || e.code === "ArrowRight") {
@@ -185,7 +167,7 @@ document.addEventListener("DOMContentLoaded", () => {
         if (nextPage < pages.length) {
           showPage(nextPage);
         } else {
-          popup.style.display = "none"; // close if last page
+          popup.style.display = "none"; 
         }
       } else if (e.code === "ArrowLeft") {
         e.preventDefault();
