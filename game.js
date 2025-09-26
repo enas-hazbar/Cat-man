@@ -439,7 +439,7 @@ document.addEventListener("DOMContentLoaded", () => {
   } else if (maze === 3) {
     winText.textContent = "You beat the hardest level! 🎉";
     nextBtn.textContent = "Return to Homepage";
-    nextBtn.onclick = () => window.location.href = "homepage.html";
+    nextBtn.onclick = () => window.location.href = "index.html";
 
   }
 

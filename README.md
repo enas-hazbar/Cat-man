@@ -22,13 +22,13 @@ Cat-man/
 ├── levels/ # HTML pages for each level
 │ └── level.html
 ├── homepage/ # Homepage & menu
-│ └── homepage.html
+│ └── index.html
 └── README.md # This file 📝
 
 
 ## ⬆️ How to Play
 
-1. Open `homepage/homepage.html` in a browser (Chrome, Firefox, Edge). 🌐  
+1. Open `index.html` in a browser (Chrome, Firefox, Edge). 🌐  
 2. Click a level to start.  
 3. Move Cat-Man using the arrow keys:  
    - `←` Left  
